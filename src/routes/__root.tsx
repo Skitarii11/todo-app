@@ -4,17 +4,6 @@ import '../styles.css';
 
 export const Route = createRootRoute({
   component: RootLayout,
-  notFoundComponent: () => {
-    return (
-      <div className="p-8 text-center">
-        <h1 className="text-2xl font-bold text-slate-100">404 - Page Not Found</h1>
-        <p className="mt-2 text-slate-400">The page you are looking for doesn't exist.</p>
-        <Link to="/" className="mt-4 inline-block text-blue-500 hover:underline">
-          Go back home
-        </Link>
-      </div>
-    );
-  },
 });
 
 function Navigation() {
