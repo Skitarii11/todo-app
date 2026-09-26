@@ -1,16 +1,8 @@
 import { createRootRoute, Link, Outlet, Scripts } from '@tanstack/react-router';
 import { AuthProvider, useAuth } from '../context/AuthContext';
-import appCss from '../styles.css?url';
+import '../styles.css';
 
 export const Route = createRootRoute({
-  head: () => ({
-    links: [
-      {
-        rel: 'stylesheet',
-        href: appCss,
-      },
-    ],
-  }),
   component: RootLayout,
 });
 
