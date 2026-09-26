@@ -1,9 +1,13 @@
-import { createRootRoute, Link, Outlet, Scripts } from '@tanstack/react-router';
+import { createRootRoute, HeadContent, Link, Outlet, Scripts } from '@tanstack/react-router';
 import { AuthProvider, useAuth } from '../context/AuthContext';
-import '../styles.css';
+import appCss from "../styles.css?url"
 
 export const Route = createRootRoute({
+  head: () => ({
+    links: [{ rel: "stylesheet", href: appCss }],
+  }),
   component: RootLayout,
+  
 });
 
 function Navigation() {
@@ -48,6 +52,7 @@ function RootLayout() {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Todo Dashboard</title>
+        <HeadContent />
       </head>
       <body className="bg-[#111625] p-6 min-h-screen">
         <AuthProvider>
