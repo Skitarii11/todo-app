@@ -42,7 +42,8 @@ export const deleteTaskApi = async (id: string): Promise<string> => {
 };
 
 export const fetchWeather = async (city: string) => {
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.apiKey}&units=metric`;
+  const apiKey = import.meta.env.apiKey
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   const res = await fetch(url);
   if (!res.ok) throw new Error("Failed to fetch weather data");
   return res.json();
